@@ -5,7 +5,8 @@ Mnist
 머신러닝을 지속해서 돌릴 때 잘 나온 훈련 시점을 파악하기 위해 사용합니다.
 It is used to identify good timing of training when machine learning is continuously turned.
 ## 환경Environment
-`python 3.7.9`  
+`Python 3.7.9`  
+`PyCharm 2020.2.1`
 `tensorflow 2.3.0 (cuda 10.1, cuDNN 7.6.5, GTX1650 Super)`   
 `keras 2.4.3`  
 
