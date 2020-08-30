@@ -6,7 +6,7 @@ Mnist
 It is used to identify good timing of training when machine learning is continuously turned.
 ## 환경Environment
 `Python 3.7.9`  
-`PyCharm 2020.2.1`
+`PyCharm 2020.2.1`  
 `tensorflow 2.3.0 (cuda 10.1, cuDNN 7.6.5)`   
 `keras 2.4.3`  
 
