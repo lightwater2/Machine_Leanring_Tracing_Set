@@ -2,7 +2,7 @@
 파이썬을 이용하여 머신러닝을 할 때 컴파일 시 코드, 히스토리, 모델, 결과예측을 저장해 주는 소스입니다.  
 It is a source that stores code, history, model, and result prediction when compiling a machine learning using Python.
 Mnist  
-머신러닝을 지속해서 돌릴 때 잘 나온 훈련 시점을 파악하기 위해 사용합니다.
+머신러닝을 지속해서 돌릴 때 잘 나온 훈련 시점을 파악하기 위해 사용합니다.  
 It is used to identify good timing of training when machine learning is continuously turned.
 ## 환경Environment
 `Python 3.7.9`  
