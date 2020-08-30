@@ -1,4 +1,4 @@
-# `Machine_Learning_Tracing_Set`
+# `Machine_Learning_History_Manager`
 파이썬을 이용하여 머신러닝을 할 때 컴파일 시 코드, 히스토리, 모델, 결과예측을 저장해 주는 소스입니다.  
 It is a source that stores code, history, model, and result prediction when compiling a machine learning using Python.
 Mnist  
