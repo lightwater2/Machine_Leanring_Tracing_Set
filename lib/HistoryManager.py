@@ -37,5 +37,5 @@ def LoggingHistory(history, time="timeless"):
     log.info(history.history['val_accuracy'])
 
 
-def SaveToCode(location, time="timeless"):
-    shutil.copy('train.py', location + time + '.txt')
+def SaveToCode(location, fileName, time="timeless"):
+    shutil.copy(fileName, location + time + '.txt')

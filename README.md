@@ -21,4 +21,4 @@ dacon.io.SMILES_AI
     ├──predicts : 예측 결과 저장
     └──train.py : 실행할 훈련 소스
 ```
-MNIST CNN 참고 : https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6
+참고 : [Kaggle MNIST CNN](https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6)

@@ -1,10 +1,12 @@
 # 참고 : https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6
 # 1. 자체 라이브러리
-from lib import FileManager
+from lib import HistoryManager
 
-time = FileManager.TimeChecker()  # 모델 및 결과 이름 작성에 사용
-FileManager.SaveToCode("../Mnist/archive/", time=time)  # 컴파일 시점 코드저장
+time = HistoryManager.TimeChecker()  # 모델 및 결과 이름 작성에 사용
+import os
+HistoryManager.SaveToCode("../Mnist/archive/", fileName=os.path.abspath(__file__), time=time)  # 컴파일 시점 코드저장
 # 2. 이미지 로드 및 전처리 단계
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
@@ -81,7 +83,7 @@ datagen = ImageDataGenerator(
     horizontal_flip=False,  # randomly flip images
     vertical_flip=False)  # randomly flip images
 datagen.fit(X_train)
-model = FileManager.LoadToModel(setModel)  # 두번째 매개변수로 파일명(.h5) 입력시 이미 학습된 모델 로드 default는 새 학습
+model = HistoryManager.LoadToModel(setModel)  # 두번째 매개변수로 파일명(.h5) 입력시 이미 학습된 모델 로드 default는 새 학습
 
 model.compile(optimizer=rmsprop, loss='categorical_crossentropy', metrics=['accuracy'])
 History()  # keras history 셋업
@@ -90,16 +92,16 @@ history = model.fit(datagen.flow(X_train, Y_train, batch_size=batch_size),
                     verbose=2, steps_per_epoch=X_train.shape[0] // batch_size,
                     callbacks=[learning_rate_reduction])
 
-FileManager.LoggingHistory(history=history, time=time)
+HistoryManager.LoggingHistory(history=history, time=time)
 
 
-FileManager.SaveToModel(model, directory="../Mnist/models/", time=time)
+HistoryManager.SaveToModel(model, directory="../Mnist/models/", time=time)
 pred = model.predict(test)
 
 
 # 정답에 맞는 포매팅, 저장함수에 콜백으로 전달
 def Submission(prediction):
-    thresHold = 0.5  # 임계값 필요시 사용하여 정답 작성
+    # thresHold = 0.5  # 임계값 필요시 사용하여 정답 작성
     df = pd.DataFrame(prediction)
     df2 = pd.DataFrame(columns=['ImageId', 'Label'])
     df2['ImageId'] = df.index + 1
@@ -107,4 +109,4 @@ def Submission(prediction):
     return df2
 
 
-FileManager.SaveToPredict(pred=pred, callback=Submission, directory="../Mnist/predicts/", time=time)
+HistoryManager.SaveToPredict(pred=pred, callback=Submission, directory="../Mnist/predicts/", time=time)
